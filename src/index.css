@@ -1,0 +1,18 @@
+@import "tailwindcss";
+html {
+  /* background-color: rgb(230, 233, 245); */
+  background: linear-gradient(
+    135deg,
+    rgba(255, 253, 208, 1) 0%,
+    rgb(255, 254, 200) 100%
+  );
+  /* background: #dbd7d7; */
+}
+@media screen and (min-width: 500px) {
+  .box {
+    box-shadow: rgba(49, 46, 240, 0.4) 5px 5px, rgba(65, 46, 240, 0.3) 10px 10px,
+      rgba(46, 59, 240, 0.2) 15px 15px, rgba(46, 65, 240, 0.1) 20px 20px,
+      rgba(46, 82, 240, 0.05) 25px 25px;
+    border: none;
+  }
+}
