@@ -13,7 +13,9 @@ export default function FilePage({ user }) {
     }
 
     async function fetchFile() {
-      const res = await fetch(`http://localhost:5000/file/${id}?expiry=3600`);
+      const res = await fetch(
+        `${import.meta.env.VITE_API_URL}/file/${id}?expiry=3600`
+      );
       const data = await res.json();
       setFileUrl(data.url);
     }

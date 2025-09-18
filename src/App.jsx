@@ -47,7 +47,7 @@ function App() {
     const { error } = await supabase.auth.signInWithOAuth({
       provider: "google",
       options: {
-        redirectTo: "http://localhost:5173", // your frontend base URL
+        redirectTo: "https://web-share-client.vercel.app", // your frontend base URL
       },
     });
     if (error) console.error(error);
