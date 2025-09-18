@@ -21,13 +21,17 @@ export default function Home({ user }) {
     formData.append("user_id", user.id);
 
     try {
-      const res = await axios.post("http://localhost:5000/upload", formData, {
-        headers: { "Content-Type": "multipart/form-data" },
-        onUploadProgress: (e) => {
-          const percent = Math.round((e.loaded * 100) / e.total);
-          setProgress(percent);
-        },
-      });
+      const res = await axios.post(
+        `${import.meta.env.VITE_API_URL}/upload`,
+        formData,
+        {
+          headers: { "Content-Type": "multipart/form-data" },
+          onUploadProgress: (e) => {
+            const percent = Math.round((e.loaded * 100) / e.total);
+            setProgress(percent);
+          },
+        }
+      );
 
       setDownloadLink(res.data.shareUrl);
     } catch (err) {
